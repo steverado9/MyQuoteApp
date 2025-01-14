@@ -1,12 +1,23 @@
-const Quote = document.getElementById('content');
-const Button = document.querySelector('.btn');
+const body = document.querySelector('body')
+const quote = document.getElementById('content');
+const author = document.getElementById('author');
+const button = document.querySelector('.btn');
+
+//Using an onload function on the body element
+async function myFunction() {
+    const result = await getQuoteFromApi();
+    quote.textContent = `"${result.randomQuote}"`;
+    author.textContent = `~${result.randomAuthor}`;
+}
 
 //using an asynchronous function to call an asynchronous function
-Button.addEventListener('click', async () => { //add an event listener to the button
-    Quote.textContent = await getData(); //text content of the quote element should be the returned data
+button.addEventListener('click', async () => { //add an event listener to the button
+    const result = await getQuoteFromApi(); //await and async function go together. The function is called inside a variable
+    quote.textContent = `"${result.randomQuote}"`; //called the value of randomquote using it's key
+    author.textContent = `~${result.randomAuthor}`; //called the value of random author using it's key
 })
 
-async function getData() { 
+async function getQuoteFromApi() {
     let randomQuote = "";
     let randomAuthor = "";
     const url = "https://dummyjson.com/quotes/random"; //putting the url where you'll get data inside url variable
@@ -23,7 +34,10 @@ async function getData() {
     } catch (error) { //we catch the error
         console.error(error.message); //display this error message
     }
-    return `"${randomQuote}" ~${randomAuthor}`; //return the randomquote and randomAuthor
+    return {
+        randomQuote: randomQuote,
+        randomAuthor: randomAuthor
+    } //return the randomquote and randomAuthor inside an object
 }
 
 

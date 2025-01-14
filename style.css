@@ -13,3 +13,8 @@ body {
     background-color: black;
     border: 1px solid black;
 }
+
+.display{
+    display: flex;
+    justify-content: end;
+}
