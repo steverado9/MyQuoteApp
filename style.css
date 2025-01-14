@@ -1,3 +1,15 @@
 body {
     background-color: rgba(255, 0, 0, 0.5);
+    padding: 200px;
+}
+
+.card{
+    background-color: rgba(255, 192, 203, 0.5);
+    margin: auto;
+    width: 50%;
+}
+
+#divider {
+    background-color: black;
+    border: 1px solid black;
 }
