@@ -1,12 +1,12 @@
 body {
     background-color: rgba(255, 0, 0, 0.5);
-    padding: 200px;
+    padding: 150px;
 }
 
-.card{
+.card {
     background-color: rgba(255, 192, 203, 0.5);
     margin: auto;
-    width: 50%;
+    width: 60%;
 }
 
 #divider {
@@ -14,7 +14,17 @@ body {
     border: 1px solid black;
 }
 
-.display{
+.display {
     display: flex;
     justify-content: end;
 }
+
+.text-danger,
+#content span {
+    color: red;
+}
+
+#content span {
+    font-size: 2rem;
+}
+
