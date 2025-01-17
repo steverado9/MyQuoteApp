@@ -4,7 +4,7 @@ const author = document.getElementById('author'); //get the element to house the
 const button = document.querySelector('.btn'); //get the button element by it's class name btn
 
 //Using an onload function on the body element
-async function myFunction() {
+const myFunction = async () => {
     const result = await getQuoteFromApi();//await and async function go together. The function is called inside a variable
 
     const spanElement1 = document.createElement('span'); //created a span element
@@ -49,7 +49,7 @@ button.addEventListener('click', async (e) => { //add an event listener to the b
     author.textContent = `~${result.randomAuthor}`; //called the value of random author using it's key and addig it as content to the author element
 })
 
-async function getQuoteFromApi() {
+const getQuoteFromApi = async () => {
     let randomQuote = "";
     let randomAuthor = "";
     const url = "https://dummyjson.com/quotes/random"; //putting the url where you'll get data inside url variable
